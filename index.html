@@ -3,242 +3,481 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Piracy Resources</title>
-  <meta name="description" content="Curated piracy tools, gaming repacks, security utils — with safety ratings and live search." />
+  <title>PIRACY.RES — Privacy & Utility Directory</title>
+  <meta name="description" content="Curated open-source utilities, privacy tools, live leak audits, and self-hosted software." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#0b0f17;--bg-card:#131b28;--bg-card-hover:#1a2436;--bg-subtle:#182232;
-  --border:#223044;--border-hover:#3b82f6;
-  --text:#f1f5f9;--text-muted:#94a3b8;--text-dim:#64748b;
-  --accent:#3b82f6;--accent-bg:rgba(59,130,246,0.12);
-  --safe:#10b981;--safe-bg:rgba(16,185,129,0.1);
-  --caution:#f59e0b;--caution-bg:rgba(245,158,11,0.1);
-  --danger:#ef4444;--danger-bg:rgba(239,68,68,0.1);
-  --font-sans:'Inter',sans-serif;--font-mono:'JetBrains Mono',monospace;
-  --nav-h:60px;--max-w:1200px;--radius:8px;
-}
-[data-theme="light"]{
-  --bg:#f8fafc;--bg-card:#ffffff;--bg-card-hover:#f1f5f9;--bg-subtle:#e2e8f0;
-  --border:#cbd5e1;--border-hover:#2563eb;
-  --text:#0f172a;--text-muted:#475569;--text-dim:#94a3b8;
-  --accent:#2563eb;--accent-bg:rgba(37,99,235,0.08);
-  --safe:#059669;--safe-bg:rgba(5,150,105,0.1);
-  --caution:#d97706;--caution-bg:rgba(217,119,6,0.1);
-  --danger:#dc2626;--danger-bg:rgba(220,38,38,0.1);
-}
-html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 16px)}
-body{background:var(--bg);color:var(--text);font-family:var(--font-sans);font-size:14px;line-height:1.5;min-height:100vh;-webkit-font-smoothing:antialiased}
-::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#090d14;--bg-card:#111723;--bg-card-hover:#161f2e;--bg-subtle:#1a2333;
+      --border:#1e293b;--border-hover:#3b82f6;
+      --text:#f8fafc;--text-muted:#94a3b8;--text-dim:#64748b;
+      --accent:#3b82f6;--accent-hover:#2563eb;--accent-bg:rgba(59,130,246,0.12);
+      --safe:#10b981;--safe-bg:rgba(16,185,129,0.12);
+      --caution:#f59e0b;--caution-bg:rgba(245,158,11,0.12);
+      --danger:#ef4444;--danger-bg:rgba(239,68,68,0.12);
+      --font-sans:'Inter',sans-serif;--font-mono:'JetBrains Mono',monospace;
+      --nav-h:58px;--max-w:1240px;--radius:10px;
+    }
+    [data-theme="light"]{
+      --bg:#f8fafc;--bg-card:#ffffff;--bg-card-hover:#f1f5f9;--bg-subtle:#e2e8f0;
+      --border:#cbd5e1;--border-hover:#2563eb;
+      --text:#0f172a;--text-muted:#475569;--text-dim:#94a3b8;
+      --accent:#2563eb;--accent-hover:#1d4ed8;--accent-bg:rgba(37,99,235,0.08);
+      --safe:#059669;--safe-bg:rgba(5,150,105,0.1);
+      --caution:#d97706;--caution-bg:rgba(217,119,6,0.1);
+      --danger:#dc2626;--danger-bg:rgba(220,38,38,0.1);
+    }
+    html{scroll-behavior:smooth;scroll-padding-top:110px}
+    body{background:var(--bg);color:var(--text);font-family:var(--font-sans);font-size:14px;line-height:1.5;min-height:100vh;-webkit-font-smoothing:antialiased}
+    ::-webkit-scrollbar{width:8px;height:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+    :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);border-bottom:1px solid var(--border);background:var(--bg);backdrop-filter:blur(12px)}
-.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 20px;height:100%;display:flex;align-items:center;gap:24px}
-.nav-logo{font-family:var(--font-mono);font-weight:700;font-size:15px;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
-.nav-logo span{color:var(--accent)}
-.nav-links{display:flex;gap:4px;list-style:none;flex:1;overflow-x:auto}
-.nav-link{font-size:13px;font-weight:500;color:var(--text-muted);text-decoration:none;padding:6px 12px;border-radius:var(--radius);transition:all 0.15s;white-space:nowrap;display:flex;align-items:center;gap:6px}
-.nav-link:hover{color:var(--text);background:var(--bg-subtle)}
-.nav-actions{display:flex;align-items:center;gap:8px;margin-left:auto}
-.btn-icon{width:34px;height:34px;display:flex;align-items:center;justify-content:center;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);color:var(--text-muted);cursor:pointer;transition:all 0.15s}
-.btn-icon:hover{color:var(--text);border-color:var(--border-hover)}
+    .top-stack{position:sticky;top:0;z-index:100;background:rgba(9,13,20,0.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+    [data-theme="light"] .top-stack{background:rgba(248,250,252,0.88)}
 
-.search-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);display:flex;align-items:flex-start;justify-content:center;padding-top:80px;opacity:0;visibility:hidden;transition:all 0.2s}
-.search-overlay.open{opacity:1;visibility:visible}
-.search-box{width:100%;max-width:560px;margin:0 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:0 20px 25px -5px rgba(0,0,0,0.5)}
-.search-input-wrap{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--border)}
-#global-search-input{flex:1;background:transparent;border:none;outline:none;font-family:var(--font-sans);font-size:15px;color:var(--text)}
-.search-results{max-height:360px;overflow-y:auto;padding:8px 0}
-.search-result-item{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;cursor:pointer;color:var(--text);transition:background 0.15s}
-.search-result-item:hover{background:var(--bg-subtle)}
-kbd{font-family:var(--font-mono);font-size:11px;background:var(--bg-subtle);border:1px solid var(--border);border-radius:4px;padding:2px 6px;color:var(--text-muted)}
+    .vpn-banner{width:100%;padding:8px 20px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:12px;font-family:var(--font-mono);border-bottom:1px solid var(--border);transition:all 0.2s}
+    .vpn-banner.state-safe{background:var(--safe-bg);color:var(--safe)}
+    .vpn-banner.state-exposed{background:var(--danger-bg);color:var(--danger)}
+    .vpn-banner.state-caution{background:var(--caution-bg);color:var(--caution)}
+    .vpn-dot{width:7px;height:7px;border-radius:50%;background:currentColor;flex-shrink:0;box-shadow:0 0 8px currentColor}
+    .vpn-detail{color:var(--text-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .vpn-fix-btn{background:var(--danger);color:#fff;border:none;border-radius:6px;padding:3px 10px;font-family:var(--font-mono);font-size:11px;font-weight:700;cursor:pointer;flex-shrink:0;transition:opacity 0.15s}
+    .vpn-fix-btn:hover{opacity:0.88}
+    .vpn-dismiss{background:transparent;border:none;color:var(--text-dim);cursor:pointer;font-size:14px;padding:0 4px;margin-left:auto}
+    .vpn-dismiss:hover{color:var(--text)}
 
-.vpn-banner{width:100%;padding:10px 20px;display:flex;align-items:center;gap:12px;font-size:13px;border-bottom:1px solid var(--border);background:var(--bg-card)}
-.vpn-banner.state-safe{background:var(--safe-bg);color:var(--safe);border-color:rgba(16,185,129,0.2)}
-.vpn-banner.state-exposed{background:var(--danger-bg);color:var(--danger);border-color:rgba(239,68,68,0.2)}
-.vpn-banner.state-caution{background:var(--caution-bg);color:var(--caution);border-color:rgba(245,158,11,0.2)}
-.vpn-dot{width:8px;height:8px;border-radius:50%;background:currentColor;flex-shrink:0}
-.vpn-detail{color:var(--text-muted);flex:1}
-.vpn-dismiss{background:transparent;border:none;color:var(--text-dim);cursor:pointer;font-size:16px;padding:2px 6px}
+    .site-nav{height:var(--nav-h)}
+    .nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 20px;height:100%;display:flex;align-items:center;gap:16px}
+    .nav-logo{font-family:var(--font-mono);font-weight:700;font-size:15px;color:var(--text);text-decoration:none;letter-spacing:-0.02em;flex-shrink:0}
+    .nav-logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:2px;list-style:none;flex:1;overflow-x:auto;scrollbar-width:none}
+    .nav-links::-webkit-scrollbar{display:none}
+    .nav-link{font-size:13px;font-weight:500;color:var(--text-muted);text-decoration:none;padding:6px 9px;border-radius:6px;transition:all 0.15s;white-space:nowrap;display:flex;align-items:center;gap:5px}
+    .nav-link:hover{color:var(--text);background:var(--bg-subtle)}
+    .nav-actions{display:flex;align-items:center;gap:6px;flex-shrink:0}
+    .btn-icon{height:34px;padding:0 10px;display:flex;align-items:center;justify-content:center;gap:6px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;color:var(--text-muted);cursor:pointer;font-size:12px;font-family:var(--font-mono);transition:all 0.15s}
+    .btn-icon:hover{color:var(--text);border-color:var(--border-hover)}
 
-.hero{max-width:var(--max-w);margin:0 auto;padding:calc(var(--nav-h) + 32px) 20px 24px}
-.hero-title{font-size:42px;font-weight:700;letter-spacing:-0.02em;margin-bottom:8px;font-family:var(--font-mono);text-transform:uppercase;text-align:center}
-.hero-subtitle{color:var(--text-muted);font-size:15px;margin-bottom:20px;text-align:center}
-.hero-controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:12px 16px}
-.search-field{position:relative;flex:1;min-width:240px}
-.search-field input{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:8px 12px 8px 36px;color:var(--text);font-size:13px;outline:none}
-.search-field input:focus{border-color:var(--accent)}
-.search-field svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text-dim)}
-.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.filter-btn{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:6px 12px;font-size:12px;color:var(--text-muted);cursor:pointer;transition:all 0.15s}
-.filter-btn:hover,.filter-btn.active{color:var(--text);border-color:var(--accent);background:var(--accent-bg)}
-select.filter-btn{outline:none}
+    select{background-color:var(--bg-card);color:var(--text);border:1px solid var(--border);outline:none}
+    select option{background-color:var(--bg-card);color:var(--text);padding:8px}
 
-.main-content{max-width:var(--max-w);margin:0 auto;padding:0 20px 60px}
-.resource-section{margin-bottom:32px}
-.section-header{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);margin-bottom:16px}
-.section-title{font-size:18px;font-weight:600;display:flex;align-items:center;gap:10px}
-.section-title-icon{font-size:20px;line-height:1}
-.section-count{font-size:12px;color:var(--text-dim);font-weight:400}
+    .modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);display:flex;align-items:flex-start;justify-content:center;padding:70px 16px 24px;opacity:0;visibility:hidden;transition:all 0.15s;overflow-y:auto}
+    .modal-overlay.open{opacity:1;visibility:visible}
+    .modal-box{width:100%;max-width:640px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.65);overflow:hidden}
+    .modal-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border)}
+    .modal-title{font-family:var(--font-mono);font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px}
+    .modal-body{padding:20px;display:flex;flex-direction:column;gap:14px}
+    .protect-step{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px 16px}
+    .protect-step-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;font-weight:600;font-size:14px}
+    .protect-step-num{font-family:var(--font-mono);font-size:11px;color:var(--safe);background:var(--safe-bg);padding:2px 8px;border-radius:4px}
+    .protect-step p{font-size:13px;color:var(--text-muted);line-height:1.5}
+    .protect-code{margin-top:8px;background:var(--bg-card);border:1px solid var(--border);padding:8px 10px;border-radius:6px;font-family:var(--font-mono);font-size:12px;color:var(--safe);display:flex;align-items:center;justify-content:space-between;gap:8px}
+    .protect-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 
-.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
-.tool-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;display:flex;flex-direction:column;gap:12px;transition:all 0.15s}
-.tool-card:hover{border-color:var(--border-hover);background:var(--bg-card-hover)}
-.card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
-.card-icon{width:36px;height:36px;background:var(--bg-subtle);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;color:var(--accent)}
-.card-title-group{flex:1;min-width:0}
-.card-name{font-size:15px;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.card-desc{font-size:13px;color:var(--text-muted);line-height:1.4;margin-top:4px}
-.card-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:12px;border-top:1px solid var(--border)}
-.card-tags{display:flex;gap:6px;align-items:center}
-.tag{font-size:11px;color:var(--text-dim);background:var(--bg-subtle);padding:2px 6px;border-radius:4px;font-family:var(--font-mono)}
-.safety-badge{font-size:11px;font-weight:500;padding:2px 8px;border-radius:100px}
-.safety-badge.safe{color:var(--safe);background:var(--safe-bg)}
-.safety-badge.caution{color:var(--caution);background:var(--caution-bg)}
-.safety-badge.danger{color:var(--danger);background:var(--danger-bg)}
+    .search-input-wrap{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--border)}
+    #global-search-input{flex:1;background:transparent;border:none;outline:none;font-family:var(--font-sans);font-size:15px;color:var(--text)}
+    .search-results{max-height:380px;overflow-y:auto;padding:8px}
+    .search-result-item{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-radius:8px;cursor:pointer;color:var(--text);transition:background 0.15s}
+    .search-result-item:hover{background:var(--bg-subtle)}
+    kbd{font-family:var(--font-mono);font-size:11px;background:var(--bg-subtle);border:1px solid var(--border);border-radius:4px;padding:2px 6px;color:var(--text-muted)}
 
-.card-actions{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px}
-.card-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--accent);text-decoration:none;padding:6px 10px;background:var(--accent-bg);border-radius:var(--radius);transition:background 0.15s}
-.card-link:hover{background:rgba(59,130,246,0.25)}
-.btn-secondary{background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-muted);font-size:12px;padding:6px 10px;border-radius:var(--radius);cursor:pointer;transition:all 0.15s}
-.btn-secondary:hover{color:var(--text);border-color:var(--border-hover)}
+    .hero{max-width:var(--max-w);margin:0 auto;padding:32px 20px 24px}
+    .hero-header{text-align:center;margin-bottom:24px}
+    .hero-title{font-size:38px;font-weight:700;letter-spacing:-0.03em;margin-bottom:8px;font-family:var(--font-mono)}
+    .hero-title span{color:var(--accent)}
+    .hero-subtitle{color:var(--text-muted);font-size:15px;max-width:560px;margin:0 auto}
 
-.cmd-block{display:flex;align-items:center;justify-content:space-between;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:6px 10px;font-family:var(--font-mono);font-size:11px;color:var(--text-muted);width:100%}
+    .audit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+    .audit-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+    .audit-top{display:flex;align-items:center;justify-content:space-between;font-family:var(--font-mono);font-size:11px;color:var(--text-muted)}
+    .audit-status{font-family:var(--font-mono);font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px}
+    .audit-status.ok{color:var(--safe)}
+    .audit-status.warn{color:var(--caution)}
+    .audit-status.bad{color:var(--danger)}
+    .audit-sub{font-size:12px;color:var(--text-dim);line-height:1.35}
 
-.no-results{text-align:center;padding:48px 0;color:var(--text-muted);display:none}
+    .hero-controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:12px 16px}
+    .search-field{position:relative;flex:1;min-width:240px}
+    .search-field input{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 12px 9px 36px;color:var(--text);font-size:13px;outline:none;transition:border-color 0.15s}
+    .search-field input:focus{border-color:var(--accent)}
+    .search-field svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text-dim)}
+    .filters{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+    .filter-btn{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:7px 12px;font-size:12px;font-weight:500;color:var(--text-muted);cursor:pointer;transition:all 0.15s}
+    .filter-btn:hover,.filter-btn.active{color:var(--text);border-color:var(--accent);background:var(--accent-bg)}
+    select.filter-btn{outline:none}
 
-.back-to-top{position:fixed;bottom:24px;right:24px;width:36px;height:36px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all 0.2s}
-.back-to-top.visible{opacity:1;visibility:visible}
-.back-to-top:hover{color:var(--text);border-color:var(--border-hover)}
+    .main-content{max-width:var(--max-w);margin:0 auto;padding:0 20px 64px}
+    .resource-section{margin-bottom:36px}
+    .section-header{display:flex;align-items:center;justify-content:space-between;padding-bottom:12px;border-bottom:1px solid var(--border);margin-bottom:16px}
+    .section-title{font-size:17px;font-weight:600;display:flex;align-items:center;gap:10px}
+    .section-count{font-family:var(--font-mono);font-size:12px;color:var(--text-dim);background:var(--bg-card);padding:2px 8px;border-radius:100px;border:1px solid var(--border)}
 
-.site-footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;font-size:12px;color:var(--text-dim)}
+    .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+    .tool-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:12px;transition:transform 0.15s,border-color 0.15s,background 0.15s}
+    .tool-card:hover{border-color:var(--border-hover);background:var(--bg-card-hover);transform:translateY(-2px)}
+    .card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+    .card-icon{width:38px;height:38px;background:var(--bg-subtle);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+    .card-title-group{flex:1;min-width:0}
+    .card-name{font-size:15px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:8px}
+    .card-desc{font-size:13px;color:var(--text-muted);line-height:1.45;margin-top:4px}
+    .card-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:12px;border-top:1px solid var(--border)}
+    .card-tags{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+    .tag{font-size:11px;color:var(--text-muted);background:var(--bg-subtle);padding:2px 7px;border-radius:4px;font-family:var(--font-mono)}
+    .safety-badge{font-family:var(--font-mono);font-size:10px;font-weight:700;padding:3px 8px;border-radius:100px;letter-spacing:0.03em}
+    .safety-badge.safe{color:var(--safe);background:var(--safe-bg)}
+    .safety-badge.caution{color:var(--caution);background:var(--caution-bg)}
+    .safety-badge.danger{color:var(--danger);background:var(--danger-bg)}
 
-@media(max-width:768px){
-  .hero-controls{flex-direction:column;align-items:stretch}
-  .filters{overflow-x:auto;padding-bottom:4px}
-  .cards-grid{grid-template-columns:1fr}
-}
+    .card-actions{display:flex;align-items:center;gap:8px;margin-top:4px}
+    .card-link{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:12px;font-weight:600;color:#fff;text-decoration:none;padding:8px 12px;background:var(--accent);border-radius:6px;transition:background 0.15s}
+    .card-link:hover{background:var(--accent-hover)}
+    .btn-secondary{background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-muted);font-size:12px;font-weight:500;padding:7px 10px;border-radius:6px;cursor:pointer;text-decoration:none;transition:all 0.15s}
+    .btn-secondary:hover{color:var(--text);border-color:var(--border-hover)}
+    .btn-fav.active{color:#eab308;border-color:rgba(234,179,8,0.4);background:rgba(234,179,8,0.1)}
+
+    .cmd-block{flex:1;display:flex;align-items:center;justify-content:space-between;gap:8px;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:6px 10px;font-family:var(--font-mono);font-size:11px;color:var(--text-muted);overflow:hidden}
+    .cmd-block code{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+    .tools-grid-clean{display:grid;grid-template-columns:repeat(2, 1fr);gap:16px;margin-top:36px;margin-bottom:36px}
+    .tool-box{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:12px;min-height:210px;justify-content:space-between}
+    .tool-box-full{grid-column:1/-1}
+    .tool-box h3{font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:space-between}
+    .tool-input-row{display:flex;gap:8px;flex-wrap:wrap}
+    .tool-input{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:7px 10px;color:var(--text);font-family:var(--font-mono);font-size:12px;outline:none}
+    .tool-input:focus{border-color:var(--accent)}
+
+    .dropzone{border:2px dashed var(--border);border-radius:8px;padding:16px;text-align:center;cursor:pointer;background:var(--bg);transition:all 0.15s}
+    .dropzone:hover{border-color:var(--accent);background:var(--bg-subtle)}
+
+    .checkbox-group{display:flex;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--text-muted);margin-bottom:4px}
+    .checkbox-group label{display:flex;align-items:center;gap:6px;cursor:pointer}
+
+    .no-results{text-align:center;padding:64px 20px;color:var(--text-muted);background:var(--bg-card);border:1px dashed var(--border);border-radius:12px;display:none}
+    .no-results button{margin-top:12px}
+
+    .back-to-top{position:fixed;bottom:24px;right:24px;width:38px;height:38px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all 0.2s;box-shadow:0 4px 12px rgba(0,0,0,0.3)}
+    .back-to-top.visible{opacity:1;visibility:visible}
+    .back-to-top:hover{border-color:var(--accent);color:var(--accent)}
+
+    .site-footer{border-top:1px solid var(--border);padding:28px 20px;text-align:center;font-size:12px;color:var(--text-dim);font-family:var(--font-mono)}
+
+    @media(max-width:960px){
+      .audit-grid{grid-template-columns:repeat(2,1fr)}
+      .tools-grid-clean{grid-template-columns:1fr}
+      .tool-box-full{grid-column:auto}
+    }
+    @media(max-width:640px){
+      .hero-title{font-size:28px}
+      .audit-grid{grid-template-columns:1fr}
+      .hero-controls{flex-direction:column;align-items:stretch}
+      .cards-grid{grid-template-columns:1fr}
+      .vpn-banner{flex-wrap:wrap;justify-content:flex-start}
+    }
   </style>
 </head>
 <body>
 
-<header class="site-nav">
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">PIRACY<span>.RES</span></a>
-    <ul class="nav-links">
-      <li><a href="#sec-basics" class="nav-link"><span style="font-size: 1.1em;">⚡</span> Basics</a></li>
-      <li><a href="#sec-security" class="nav-link"><span style="font-size: 1.1em;">🛡️</span> Security</a></li>
-      <li><a href="#sec-dns" class="nav-link"><span style="font-size: 1.1em;">🌐</span> DNS</a></li>
-      <li><a href="#sec-gaming" class="nav-link"><span style="font-size: 1.1em;">🎮</span> Gaming</a></li>
-      <li><a href="#sec-media" class="nav-link"><span style="font-size: 1.1em;">🎬</span> Media</a></li>
-      <li><a href="#sec-browsers" class="nav-link"><span style="font-size: 1.1em;">🧭</span> Browsers</a></li>
-      <li><a href="#sec-selfhosted" class="nav-link"><span style="font-size: 1.1em;">🖥️</span> Self-Hosted</a></li>
-      <li><a href="#sec-system" class="nav-link"><span style="font-size: 1.1em;">⚙️</span> System</a></li>
-      <li><a href="guide.html" class="nav-link"><span style="font-size: 1.1em;">📚</span> Guides</a></li>
-    </ul>
-    <div class="nav-actions">
-      <button class="btn-icon" id="search-toggle-overlay" aria-label="Global search">🔍</button>
-      <button class="btn-icon" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+<div class="top-stack">
+  <div class="vpn-banner state-caution" id="vpn-banner">
+    <div class="vpn-dot"></div>
+    <strong id="vpn-label">CHECKING</strong>
+    <span class="vpn-detail" id="vpn-detail">Verifying connection telemetry...</span>
+    <button class="vpn-fix-btn" id="vpn-fix-btn" style="display:none;">Free Fix →</button>
+    <button class="vpn-dismiss" id="vpn-dismiss" aria-label="Dismiss banner">✕</button>
+  </div>
+
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">PIRACY<span>.RES</span></a>
+      <ul class="nav-links">
+        <li><a href="#sec-basics" class="nav-link">⚡ Core</a></li>
+        <li><a href="#sec-security" class="nav-link">🛡️ Security</a></li>
+        <li><a href="#sec-dns" class="nav-link">🌐 DNS</a></li>
+        <li><a href="#sec-gaming" class="nav-link">🎮 Gaming</a></li>
+        <li><a href="#sec-media" class="nav-link">🎬 Media</a></li>
+        <li><a href="#sec-browsers" class="nav-link">🧭 Browsers</a></li>
+        <li><a href="#sec-selfhosted" class="nav-link">🖥️ Self-Hosted</a></li>
+        <li><a href="#sec-system" class="nav-link">⚙️ System</a></li>
+        <li><a href="#sec-tools" class="nav-link">🛠️ Tools</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn-icon" id="protect-guide-btn" aria-label="Free protection guide">🛡️ Free Fix</button>
+        <button class="btn-icon" id="search-toggle-overlay" aria-label="Global search">🔍 <kbd>Ctrl K</kbd></button>
+        <button class="btn-icon" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="modal-overlay" id="protect-modal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title">🛡️ How to Hide Your IP & Seal Leaks (€0 Free)</div>
+      <button class="btn-secondary" id="close-protect-modal">ESC</button>
+    </div>
+    <div class="modal-body">
+      <div class="protect-step">
+        <div class="protect-step-head">
+          <span>1. Mask Your IP with a Free Encrypted Tunnel</span>
+          <span class="protect-step-num">€0 / FREE</span>
+        </div>
+        <p>DNS filters only encrypt domain lookups—they do NOT hide your IP. Use <strong>ProtonVPN Free</strong> (unlimited data, strict no-logs, blocks P2P on free tier) or <strong>Cloudflare WARP</strong> (masks your residential IP for web & direct downloads).</p>
+        <div class="protect-links">
+          <a href="https://protonvpn.com/free-vpn" target="_blank" rel="noopener noreferrer" class="btn-secondary">ProtonVPN Free ↗</a>
+          <a href="https://one.one.one.one/" target="_blank" rel="noopener noreferrer" class="btn-secondary">Cloudflare WARP ↗</a>
+        </div>
+      </div>
+
+      <div class="protect-step">
+        <div class="protect-step-head">
+          <span>2. Enable Free Encrypted DNS (Control D)</span>
+          <span class="protect-step-num">€0 / NO ACCOUNT</span>
+        </div>
+        <p>Blocks ads, malware, and ISP DNS logging across your entire machine. Copy the DNS-over-HTTPS URL below into Chrome, Brave, or Firefox network settings:</p>
+        <div class="protect-code">
+          <span>https://freedns.controld.com/p2</span>
+          <button class="btn-secondary" onclick="copyText('https://freedns.controld.com/p2', this)">Copy</button>
+        </div>
+      </div>
+
+      <div class="protect-step">
+        <div class="protect-step-head">
+          <span>3. Bind Tunnel Interface & Disable WebRTC Leaks</span>
+          <span class="protect-step-num">LOCKDOWN</span>
+        </div>
+        <p>Bind your VPN adapter inside qBittorrent so downloads instantly halt if the tunnel drops. In Firefox/LibreWolf, set <code>media.peerconnection.enabled</code> to <code>false</code> in <code>about:config</code> to stop WebRTC IP leaks.</p>
+        <div class="protect-code">
+          <span>qBittorrent → Tools → Options → Advanced → Network interface</span>
+        </div>
+      </div>
+
+      <button class="card-link" id="recheck-ip-btn" style="width:100%;border:none;cursor:pointer;">↻ Re-Run Full Browser & IP Audit</button>
     </div>
   </div>
-</header>
+</div>
 
-<div class="search-overlay" id="search-overlay">
-  <div class="search-box">
+<div class="modal-overlay" id="search-overlay">
+  <div class="modal-box">
     <div class="search-input-wrap">
-      🔍 <input type="search" id="global-search-input" placeholder="Quick search tools..."> <kbd>ESC</kbd>
+      <span>🔍</span>
+      <input type="search" id="global-search-input" placeholder="Jump to any utility or category..." autocomplete="off">
+      <kbd>ESC</kbd>
     </div>
     <div class="search-results" id="global-search-results"></div>
   </div>
 </div>
 
-<div class="vpn-banner state-caution" id="vpn-banner">
-  <div class="vpn-dot"></div>
-  <span id="vpn-label">Checking connection...</span>
-  <span class="vpn-detail" id="vpn-detail"></span>
-  <button class="vpn-dismiss" id="vpn-dismiss">✕</button>
-</div>
-
 <section class="hero">
-  <h1 class="hero-title">PIRACY<span style="color: var(--accent);">.RES</span></h1>
-  <p class="hero-subtitle">Organized directory of software, privacy utilities, and self-hosted tools.</p>
+  <div class="hero-header">
+    <h1 class="hero-title">PIRACY<span>.RES</span></h1>
+    <p class="hero-subtitle">Curated open-source utilities, live browser leak diagnostics, and top-tier privacy resources.</p>
+  </div>
+
+  <div class="audit-grid">
+    <div class="audit-card">
+      <div class="audit-top"><span>PUBLIC IP TUNNEL</span><button class="btn-secondary" style="padding:2px 6px;font-size:10px;" onclick="runFullAudit()">↻</button></div>
+      <div class="audit-status warn" id="audit-ip-status">Scanning...</div>
+      <div class="audit-sub" id="audit-ip-sub">Checking ISP & ASN routing</div>
+      <button class="vpn-fix-btn" id="audit-ip-fix" style="display:none;margin-top:8px;width:100%;text-align:center;" onclick="openProtectModal()">Fix IP Exposure →</button>
+    </div>
+    <div class="audit-card">
+      <div class="audit-top"><span>WEBRTC LEAK PROBE</span><span>STUN</span></div>
+      <div class="audit-status warn" id="audit-webrtc-status">Probing...</div>
+      <div class="audit-sub" id="audit-webrtc-sub">Testing ICE candidate exposure</div>
+      <button class="vpn-fix-btn" id="audit-webrtc-fix" style="display:none;margin-top:8px;width:100%;text-align:center;" onclick="openProtectModal()">Seal WebRTC Leak →</button>
+    </div>
+    <div class="audit-card">
+      <div class="audit-top"><span>CONTENT BLOCKER</span><span>uBLOCK</span></div>
+      <div class="audit-status warn" id="audit-adblock-status">Testing...</div>
+      <div class="audit-sub" id="audit-adblock-sub">Checking tracker script blocking</div>
+      <button class="vpn-fix-btn" id="audit-adblock-fix" style="display:none;margin-top:8px;width:100%;text-align:center;" onclick="jumpToResource('basics')">Install uBlock Origin →</button>
+    </div>
+    <div class="audit-card">
+      <div class="audit-top"><span>FINGERPRINT SHIELD</span><span>BROWSER</span></div>
+      <div class="audit-status warn" id="audit-fp-status">Checking...</div>
+      <div class="audit-sub" id="audit-fp-sub">Inspecting DNT, GPC & WebGL</div>
+      <button class="vpn-fix-btn" id="audit-fp-fix" style="display:none;margin-top:8px;width:100%;text-align:center;" onclick="jumpToResource('browsers')">Switch to LibreWolf →</button>
+    </div>
+  </div>
   
   <div class="hero-controls">
     <div class="search-field">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" id="search-input" placeholder="Filter resources... (Ctrl+K)">
+      <input type="text" id="search-input" placeholder="Filter by name, description, or tag...">
     </div>
     <div class="filters">
-      <select id="sort-select" class="filter-btn">
-        <option value="name-asc">Name (A–Z)</option>
-        <option value="name-desc">Name (Z–A)</option>
-        <option value="safety">Safety Tier</option>
+      <select id="sort-select" class="filter-btn" aria-label="Sort resources">
+        <option value="name-asc">Sort: A–Z</option>
+        <option value="name-desc">Sort: Z–A</option>
+        <option value="safety">Sort: Safety</option>
       </select>
       <button class="filter-btn" data-platform="windows">Windows</button>
       <button class="filter-btn" data-platform="linux">Linux</button>
+      <button class="filter-btn" data-platform="macos">macOS</button>
       <button class="filter-btn" data-platform="web">Web</button>
-      <button class="filter-btn" id="fav-filter-btn">Favorites (<span id="fav-count">0</span>)</button>
+      <button class="filter-btn" id="fav-filter-btn">★ Saved (<span id="fav-count">0</span>)</button>
     </div>
   </div>
 </section>
 
 <main class="main-content">
-  <div id="no-results" class="no-results">No resources match your active filter.</div>
+  <div id="no-results" class="no-results">
+    <p>No resources match your active filters.</p>
+    <button class="btn-secondary" id="reset-filters-btn">Reset All Filters</button>
+  </div>
   <div id="sections-container"></div>
+
+  <section class="resource-section" id="sec-tools">
+    <div class="section-header">
+      <h2 class="section-title"><span>🛠️</span> Interactive Utilities & Generators</h2>
+      <span class="section-count">BUILT-IN TOOLS</span>
+    </div>
+    <div class="tools-grid-clean">
+      <div class="tool-box">
+        <h3><span>yt-dlp Command Builder</span><span class="tag">CLI</span></h3>
+        <div class="tool-input-row">
+          <input type="text" class="tool-input" id="ytdlp-url" placeholder="Paste video URL..." value="https://youtube.com/watch?v=dQw4w9WgXcQ">
+          <select class="filter-btn" id="ytdlp-mode">
+            <option value="mp4">Best MP4</option>
+            <option value="mp3">MP3 320k</option>
+            <option value="opus">Best Audio</option>
+          </select>
+        </div>
+        <div class="cmd-block">
+          <code id="ytdlp-output">yt-dlp -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" "https://youtube.com/watch?v=dQw4w9WgXcQ"</code>
+          <button class="btn-secondary" onclick="copyText(document.getElementById('ytdlp-output').innerText, this)">Copy</button>
+        </div>
+      </div>
+
+      <div class="tool-box">
+        <h3><span>Instant Free DNS Switcher</span><span class="tag">ZERO-COST</span></h3>
+        <div class="tool-input-row">
+          <select class="tool-input" id="dns-provider-select">
+            <option value="controld">Control D Free (Ads + Malware Block)</option>
+            <option value="quad9">Quad9 (Malware Block + No Logs)</option>
+            <option value="adguard">AdGuard Public DNS (Ads + Trackers)</option>
+          </select>
+        </div>
+        <div class="cmd-block">
+          <code id="dns-output">IPv4: 76.76.2.2 | DoH: https://freedns.controld.com/p2</code>
+          <button class="btn-secondary" onclick="copyText(document.getElementById('dns-output').innerText, this)">Copy</button>
+        </div>
+      </div>
+
+      <div class="tool-box">
+        <h3><span>Local SHA-256 Hash Verifier</span><span class="tag">CLIENT-SIDE</span></h3>
+        <div class="dropzone" id="dropzone" onclick="document.getElementById('file-input').click()">
+          <span id="dropzone-text" style="font-size:12px;color:var(--text-muted);">Drop file here or click to compute SHA-256 hash</span>
+          <input type="file" id="file-input" style="display:none" onchange="handleFileHash(this.files[0])">
+        </div>
+        <div class="cmd-block" id="hash-result-block" style="display:none;">
+          <code id="file-hash-output" style="font-size:10px;">Computing...</code>
+          <button class="btn-secondary" onclick="copyText(document.getElementById('file-hash-output').innerText, this)">Copy</button>
+        </div>
+      </div>
+
+      <div class="tool-box">
+        <h3><span>Checksum Match Comparator</span><span class="tag">VALIDATION</span></h3>
+        <div class="tool-input-row">
+          <input type="text" class="tool-input" id="official-hash" placeholder="Paste official SHA-256 hash..." oninput="compareHashes()">
+        </div>
+        <div class="tool-input-row">
+          <input type="text" class="tool-input" id="computed-hash" placeholder="Paste calculated file hash..." oninput="compareHashes()">
+        </div>
+        <div id="hash-match-status" style="font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--text-dim);">Awaiting hashes...</div>
+      </div>
+
+      <div class="tool-box tool-box-full">
+        <h3><span>Docker Compose Stack Generator</span><span class="tag">SELF-HOSTED</span></h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" id="srv-jellyfin" checked onchange="updateDockerCompose()"> Jellyfin</label>
+          <label><input type="checkbox" id="srv-immich" checked onchange="updateDockerCompose()"> Immich</label>
+          <label><input type="checkbox" id="srv-portainer" checked onchange="updateDockerCompose()"> Portainer</label>
+          <label><input type="checkbox" id="srv-qbittorrent" onchange="updateDockerCompose()"> qBittorrent</label>
+        </div>
+        <div class="cmd-block" style="background:var(--bg);padding:12px;">
+          <pre><code id="docker-output" style="font-size:11px;white-space:pre-wrap;">version: '3.8'
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    ports:
+      - 8096:8096
+    restart: unless-stopped
+  immich:
+    image: ghcr.io/immich-app/immich-server:release
+    container_name: immich_server
+    ports:
+      - 2283:2283
+    restart: unless-stopped
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    ports:
+      - 9443:9443
+    restart: unless-stopped</code></pre>
+          <button class="btn-secondary" onclick="copyText(document.getElementById('docker-output').innerText, this)">Copy YAML</button>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
-<button class="back-to-top" id="back-to-top">↑</button>
+<button class="back-to-top" id="back-to-top" aria-label="Scroll to top">↑</button>
 
 <footer class="site-footer">
-  <div>Updated September 2026 · Always maintain active protection while downloading.</div>
+  <div>PIRACY.RES · Verify checksums and bind your VPN interface before downloading.</div>
 </footer>
 
 <script>
   const toolsData = [
-    { name: "FMHY", desc: "Massive directory for tools, media, and piracy guides.", platforms: "web", safety: "safe", url: "https://fmhy.net", category: "basics", icon: "🌐" },
-    { name: "uBlock Origin", desc: "Essential open-source content blocker for browsers.", platforms: "windows macos linux web", safety: "safe", url: "https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/", category: "basics", icon: "🛡️" },
-    { name: "qBittorrent", desc: "Open-source BitTorrent client without telemetry.", platforms: "windows macos linux", safety: "safe", url: "https://www.qbittorrent.org/download", category: "basics", icon: "🧲" },
-    { name: "JDownloader 2", desc: "Download manager supporting hosters and stream extraction.", platforms: "windows macos linux", safety: "safe", url: "https://jdownloader.org/download/index", category: "basics", icon: "📥" },
-    { name: "7-Zip", desc: "File archiver with high compression ratio.", platforms: "windows linux", safety: "safe", url: "https://www.7-zip.org/download.html", category: "basics", icon: "📦" },
+    { name: "FMHY", desc: "Massive community-maintained directory for tools, media, and guides.", platforms: "web", safety: "safe", url: "https://fmhy.net", category: "basics", icon: "🌐" },
+    { name: "uBlock Origin", desc: "Essential open-source wide-spectrum content blocker for browsers.", platforms: "windows macos linux web", safety: "safe", url: "https://ublockorigin.com/", category: "basics", icon: "🛡️" },
+    { name: "qBittorrent", desc: "Lightweight, open-source BitTorrent client with network interface binding.", platforms: "windows macos linux", safety: "safe", url: "https://www.qbittorrent.org/download", category: "basics", icon: "🧲" },
+    { name: "JDownloader 2", desc: "Automated download manager supporting multi-hosters and stream extraction.", platforms: "windows macos linux", safety: "safe", url: "https://jdownloader.org/download/index", category: "basics", icon: "📥" },
+    { name: "7-Zip", desc: "Open-source file archiver with high compression ratios and AES-256 encryption.", platforms: "windows linux", safety: "safe", url: "https://www.7-zip.org/download.html", category: "basics", icon: "📦" },
 
-    { name: "ProtonVPN", desc: "Swiss-based VPN provider with a free tier and WireGuard support.", platforms: "windows macos linux", safety: "safe", url: "https://protonvpn.com/download", category: "security", icon: "🔒" },
-    { name: "Mullvad VPN", desc: "Privacy-focused VPN requiring no personal info, account numbers only.", platforms: "windows macos linux", safety: "safe", url: "https://mullvad.net", category: "security", icon: "🇲" },
-    { name: "IVPN", desc: "Audited open-source VPN service centered on privacy and anti-surveillance.", platforms: "windows macos linux", safety: "safe", url: "https://www.ivpn.net", category: "security", icon: "🛡️" },
-    { name: "VirusTotal", desc: "Analyze suspicious files and URLs across 70+ engines.", platforms: "web", safety: "safe", url: "https://www.virustotal.com/", category: "security", icon: "🔍" },
-    { name: "Malwarebytes", desc: "Secondary scanner for malware detection.", platforms: "windows macos", safety: "safe", url: "https://www.malwarebytes.com", category: "security", icon: "🛡️" },
-    { name: "HaveIBeenPwned", desc: "Check if personal details appear in data breaches.", platforms: "web", safety: "safe", url: "https://haveibeenpwned.com/", category: "security", icon: "🔑" },
+    { name: "ProtonVPN Free", desc: "Swiss no-logs VPN with an unlimited free tier (blocks P2P on free servers).", platforms: "windows macos linux", safety: "safe", url: "https://protonvpn.com/free-vpn", category: "security", icon: "🔒" },
+    { name: "Cloudflare WARP", desc: "Free encrypted tunnel that masks your residential IP for web browsing.", platforms: "windows macos linux", safety: "safe", url: "https://one.one.one.one/", category: "security", icon: "☁️" },
+    { name: "Mullvad VPN", desc: "Privacy-first VPN requiring zero personal info; €5/mo flat rate.", platforms: "windows macos linux", safety: "safe", url: "https://mullvad.net", category: "security", icon: "🇲" },
+    { name: "Portmaster", desc: "Free, open-source application firewall that blocks mass surveillance and tracking.", platforms: "windows linux", safety: "safe", url: "https://safing.io/portmaster/", category: "security", icon: "🛡️" },
+    { name: "VirusTotal", desc: "Inspect suspicious binaries and URLs across 70+ antivirus engines.", platforms: "web", safety: "safe", url: "https://www.virustotal.com/", category: "security", icon: "🔍" },
+    { name: "Malwarebytes", desc: "Free on-demand scanner for detecting adware, rootkits, and malware.", platforms: "windows macos", safety: "safe", url: "https://www.malwarebytes.com", category: "security", icon: "🛡️" },
+    { name: "HaveIBeenPwned", desc: "Check if email addresses or credentials appear in known data breaches.", platforms: "web", safety: "safe", url: "https://haveibeenpwned.com/", category: "security", icon: "🔑" },
 
-    { name: "Control D", desc: "Customizable encrypted DNS to block ads and trackers network-wide.", platforms: "web", safety: "safe", url: "https://controld.com", category: "dns", icon: "🎯" },
-    { name: "AdGuard DNS", desc: "Privacy-oriented DNS service for blocking ads and malicious domains.", platforms: "web", safety: "safe", url: "https://adguard-dns.io/", category: "dns", icon: "🛡️" },
-    { name: "Quad9", desc: "Free, privacy-centric public DNS that blocks known malicious domains.", platforms: "web", safety: "safe", url: "https://quad9.net/", category: "dns", icon: "9️⃣" },
+    { name: "Control D Free DNS", desc: "Free public DNS (76.76.2.2) to block ads and trackers with no account needed.", platforms: "web", safety: "safe", url: "https://controld.com/free-dns", category: "dns", icon: "🎯" },
+    { name: "AdGuard DNS", desc: "Free privacy-oriented DNS service for network-wide ad and tracker filtering.", platforms: "web", safety: "safe", url: "https://adguard-dns.io/en/public-dns.html", category: "dns", icon: "🛡️" },
+    { name: "Quad9", desc: "Free non-profit, privacy-centric public DNS blocking malicious domains.", platforms: "web", safety: "safe", url: "https://quad9.net/", category: "dns", icon: "9️⃣" },
 
-    { name: "FitGirl Repacks", desc: "Highly compressed game repacks.", platforms: "windows", safety: "caution", url: "https://fitgirl-repacks.site", category: "gaming", icon: "🎮" },
-    { name: "SteamRip", desc: "Pre-installed direct download game archives.", platforms: "windows", safety: "caution", url: "https://steamrip.com", category: "gaming", icon: "🕹️" },
-    { name: "Vimm's Lair", desc: "Preservation vault for retro game systems.", platforms: "web", safety: "safe", url: "https://vimm.net/vault", category: "gaming", icon: "🏛️" },
-    { name: "RetroArch", desc: "Frontend for emulators, game engines, and media players.", platforms: "windows macos linux", safety: "safe", url: "https://www.retroarch.com/", category: "gaming", icon: "👾" },
+    { name: "FitGirl Repacks", desc: "Highly compressed lossless game repacks. Always verify the official domain.", platforms: "windows", safety: "caution", url: "https://fitgirl-repacks.site", category: "gaming", icon: "🎮" },
+    { name: "SteamRip", desc: "Pre-installed direct-download game archives with no installation required.", platforms: "windows", safety: "caution", url: "https://steamrip.com", category: "gaming", icon: "🕹️" },
+    { name: "Vimm's Lair", desc: "Long-running preservation vault for classic console ROMs and manuals.", platforms: "web", safety: "safe", url: "https://vimm.net/vault", category: "gaming", icon: "🏛️" },
+    { name: "RetroArch", desc: "Cross-platform frontend for emulators, game engines, and shaders.", platforms: "windows macos linux", safety: "safe", url: "https://www.retroarch.com/", category: "gaming", icon: "👾" },
 
-    { name: "Stremio", desc: "Media center software with torrent playback support.", platforms: "windows macos linux", safety: "caution", url: "https://www.stremio.com/downloads", category: "media", icon: "🎬" },
-    { name: "1337x", desc: "Public torrent directory for movies, TV, and software.", platforms: "web", safety: "caution", url: "https://1337x.to", category: "media", tags: "torrent", icon: "☠️" },
-    { name: "Anna's Archive", desc: "Search index for books, papers, and magazines.", platforms: "web", safety: "safe", url: "https://annas-archive.org", category: "media", icon: "📚" },
-    { name: "Libgen", desc: "Library Genesis for academic texts and books.", platforms: "web", safety: "safe", url: "https://libgen.is", category: "media", icon: "📖" },
-    { name: "Nicotine+", desc: "Desktop client for the Soulseek music network.", platforms: "windows macos linux", safety: "safe", url: "https://nicotine-plus.org/", category: "media", icon: "🎵" },
-    { name: "yt-dlp", desc: "Command-line media downloader for online video sites.", platforms: "windows macos linux", safety: "safe", url: "https://github.com/yt-dlp/yt-dlp", category: "media", icon: "📹" },
+    { name: "Stremio", desc: "Modular media center supporting add-ons and debrid streaming.", platforms: "windows macos linux", safety: "caution", url: "https://www.stremio.com/downloads", category: "media", icon: "🎬" },
+    { name: "1337x", desc: "Public torrent index for movies, television, and software.", platforms: "web", safety: "caution", url: "https://1337x.to", category: "media", icon: "☠️" },
+    { name: "Anna's Archive", desc: "Open-source shadow library search engine for books, papers, and comics.", platforms: "web", safety: "safe", url: "https://annas-archive.org", category: "media", icon: "📚" },
+    { name: "Nicotine+", desc: "Modern graphical client for the peer-to-peer Soulseek music network.", platforms: "windows macos linux", safety: "safe", url: "https://nicotine-plus.org/", category: "media", icon: "🎵" },
+    { name: "yt-dlp", desc: "Feature-rich command-line audio/video downloader supporting thousands of sites.", platforms: "windows macos linux", safety: "safe", url: "https://github.com/yt-dlp/yt-dlp", category: "media", icon: "📹" },
 
-    { name: "Firefox", desc: "Privacy-oriented browser with customizable extensions.", platforms: "windows macos linux", safety: "safe", url: "https://www.mozilla.org/firefox/new/", category: "browsers", icon: "🦊" },
-    { name: "LibreWolf", desc: "A fork of Firefox focused on privacy, security, and freedom.", platforms: "windows macos linux", safety: "safe", url: "https://librewolf.net", category: "browsers", icon: "🐺" },
-    { name: "Mullvad Browser", desc: "Privacy browser built with fingerprint protection.", platforms: "windows macos linux", safety: "safe", url: "https://mullvad.net/en/browser", category: "browsers", icon: "🛡️" },
+    { name: "Firefox", desc: "Open-source browser supporting full Manifest V2 extensions like uBlock Origin.", platforms: "windows macos linux", safety: "safe", url: "https://www.mozilla.org/firefox/new/", category: "browsers", icon: "🦊" },
+    { name: "LibreWolf", desc: "Hardened Firefox fork with telemetry stripped and uBlock Origin pre-installed.", platforms: "windows macos linux", safety: "safe", url: "https://librewolf.net", category: "browsers", icon: "🐺" },
+    { name: "Mullvad Browser", desc: "Free privacy browser developed with the Tor Project to resist fingerprinting.", platforms: "windows macos linux", safety: "safe", url: "https://mullvad.net/en/browser", category: "browsers", icon: "🛡️" },
 
-    { name: "Jellyfin", desc: "Free software media system to host and stream your personal media.", platforms: "windows linux web", safety: "safe", url: "https://jellyfin.org", category: "selfhosted", icon: "🍿" },
-    { name: "Immich", desc: "High-performance self-hosted photo and video backup solution.", platforms: "linux web", safety: "safe", url: "https://immich.app", category: "selfhosted", icon: "📸" },
-    { name: "Docker", desc: "Platform for developing, shipping, and running containerized applications.", platforms: "windows linux", safety: "safe", url: "https://www.docker.com", category: "selfhosted", icon: "🐳" },
-    { name: "Portainer", desc: "Lightweight management UI which allows you to easily manage Docker environments.", platforms: "linux web", safety: "safe", url: "https://www.portainer.io", category: "selfhosted", icon: "🚢" },
+    { name: "Jellyfin", desc: "Free, open-source media server to host and stream personal video libraries.", platforms: "windows linux web", safety: "safe", url: "https://jellyfin.org", category: "selfhosted", icon: "🍿" },
+    { name: "Immich", desc: "High-performance self-hosted photo and video backup alternative to Google Photos.", platforms: "linux web", safety: "safe", url: "https://immich.app", category: "selfhosted", icon: "📸" },
+    { name: "Docker", desc: "Containerization engine for isolating and deploying self-hosted services.", platforms: "windows linux", safety: "safe", url: "https://www.docker.com", category: "selfhosted", icon: "🐳" },
+    { name: "Portainer", desc: "Web-based management UI for monitoring Docker containers and stacks.", platforms: "linux web", safety: "safe", url: "https://www.portainer.io", category: "selfhosted", icon: "🚢" },
 
-    { name: "WizTree", desc: "High-speed disk space analyzer.", platforms: "windows", safety: "safe", url: "https://diskanalyzer.com/download", category: "system", icon: "📊" },
-    { name: "BleachBit", desc: "Disk cleaner and privacy guard.", platforms: "windows linux", safety: "caution", url: "https://www.bleachbit.org", category: "system", icon: "🧹" },
-    { name: "CTT WinUtil", desc: "Windows optimization script.", platforms: "windows", safety: "danger", command: "iwr -useb https://christitus.com/win | iex", category: "system", icon: "⚙️" }
+    { name: "VoidTools Everything", desc: "Lightning-fast file and folder search utility using the NTFS Master File Table.", platforms: "windows", safety: "safe", url: "https://www.voidtools.com/", category: "system", icon: "🔍" },
+    { name: "EarTrumpet", desc: "Advanced volume mixer for Windows with per-app audio routing and controls.", platforms: "windows", safety: "safe", url: "https://eartrumpet.app/", category: "system", icon: "🔊" },
+    { name: "WizTree", desc: "Ultra-fast NTFS disk space analyzer using the Master File Table.", platforms: "windows", safety: "safe", url: "https://diskanalyzer.com/download", category: "system", icon: "📊" },
+    { name: "O&O ShutUp10++", desc: "Free anti-spy tool for Windows to control telemetry and data collection.", platforms: "windows", safety: "safe", url: "https://www.oo-software.com/en/shutup10", category: "system", icon: "🎛️" },
+    { name: "BleachBit", desc: "Open-source disk space cleaner and privacy shredder.", platforms: "windows linux", safety: "caution", url: "https://www.bleachbit.org", category: "system", icon: "🧹" },
+    { name: "CTT WinUtil", desc: "Chris Titus Tech PowerShell utility for Windows debloating and tweaks.", platforms: "windows", safety: "danger", command: "irm https://christitus.com/win | iex", category: "system", icon: "⚙️" }
   ];
 
   const categoryTitles = {
@@ -257,6 +496,11 @@ select.filter-btn{outline:none}
   let activePlatform = null;
   let currentSearch = '';
   let sortOption = 'name-asc';
+  let isTunnelProtected = false;
+
+  const savedTheme = localStorage.getItem('piracy_theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  document.getElementById('theme-toggle').innerText = savedTheme === 'dark' ? '🌙' : '☀️';
 
   function saveFavs() {
     localStorage.setItem('piracy_favs', JSON.stringify([...favorites]));
@@ -272,7 +516,8 @@ select.filter-btn{outline:none}
 
   function filterTools(tools) {
     return tools.filter(t => {
-      const matchesSearch = !currentSearch || (t.name + ' ' + t.desc).toLowerCase().includes(currentSearch);
+      const hay = `${t.name} ${t.desc} ${t.platforms} ${t.category}`.toLowerCase();
+      const matchesSearch = !currentSearch || hay.includes(currentSearch);
       const matchesFav = !activeFavFilter || favorites.has(t.name);
       const matchesPlatform = !activePlatform || t.platforms.split(' ').includes(activePlatform);
       return matchesSearch && matchesFav && matchesPlatform;
@@ -294,7 +539,7 @@ select.filter-btn{outline:none}
     let html = '';
     let totalVisible = 0;
 
-    for (let [catKey, catData] of Object.entries(categoryTitles)) {
+    for (const [catKey, catData] of Object.entries(categoryTitles)) {
       let tools = toolsData.filter(t => t.category === catKey);
       tools = filterTools(tools);
       tools = sortTools(tools);
@@ -304,13 +549,14 @@ select.filter-btn{outline:none}
 
       html += `<section class="resource-section" id="sec-${catKey}">
         <div class="section-header">
-          <h2 class="section-title"><span class="section-title-icon">${catData.icon}</span> ${catData.title}</h2>
-          <span class="section-count">${tools.length} resources</span>
+          <h2 class="section-title"><span>${catData.icon}</span> ${catData.title}</h2>
+          <span class="section-count">${tools.length}</span>
         </div>
         <div class="cards-grid">`;
 
-      for (let t of tools) {
+      for (const t of tools) {
         const isFav = favorites.has(t.name);
+        const safeName = t.name.replace(/'/g, "\\'");
         html += `<article class="tool-card">
           <div class="card-header">
             <div class="card-icon">${t.icon}</div>
@@ -328,14 +574,14 @@ select.filter-btn{outline:none}
           <div class="card-actions">
             ${t.command ? `
               <div class="cmd-block">
-                <code>${t.command}</code>
+                <code title="${t.command}">${t.command}</code>
                 <button class="btn-secondary" onclick="copyText('${t.command}', this)">Copy</button>
               </div>
             ` : `
-              <a href="${t.url}" class="card-link" target="_blank" rel="noopener">Open Source →</a>
-              <button class="btn-secondary" onclick="copyText('${t.url}', this)">Link</button>
+              <a href="${t.url}" class="card-link" target="_blank" rel="noopener noreferrer">Open ↗</a>
+              <button class="btn-secondary" onclick="copyText('${t.url}', this)" title="Copy URL">Copy</button>
             `}
-            <button class="btn-secondary" onclick="toggleFavorite('${t.name}')">${isFav ? '★' : '☆'}</button>
+            <button class="btn-secondary btn-fav ${isFav ? 'active' : ''}" onclick="toggleFavorite('${safeName}')" title="Bookmark">${isFav ? '★' : '☆'}</button>
           </div>
         </article>`;
       }
@@ -350,12 +596,98 @@ select.filter-btn{outline:none}
   function copyText(text, btn) {
     navigator.clipboard.writeText(text);
     const orig = btn.innerText;
-    btn.innerText = 'Copied';
+    btn.innerText = 'Copied!';
     setTimeout(() => btn.innerText = orig, 1200);
   }
 
+  function updateYtdlpCmd() {
+    const url = document.getElementById('ytdlp-url').value.trim() || 'URL';
+    const mode = document.getElementById('ytdlp-mode').value;
+    const out = document.getElementById('ytdlp-output');
+    if (mode === 'mp4') out.innerText = `yt-dlp -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" "${url}"`;
+    if (mode === 'mp3') out.innerText = `yt-dlp -x --audio-format mp3 --audio-quality 0 "${url}"`;
+    if (mode === 'opus') out.innerText = `yt-dlp -f "ba" -x --audio-format opus "${url}"`;
+  }
+
+  document.getElementById('ytdlp-url').addEventListener('input', updateYtdlpCmd);
+  document.getElementById('ytdlp-mode').addEventListener('change', updateYtdlpCmd);
+
+  document.getElementById('dns-provider-select').addEventListener('change', (e) => {
+    const map = {
+      controld: 'IPv4: 76.76.2.2 | DoH: https://freedns.controld.com/p2',
+      quad9: 'IPv4: 9.9.9.9 | DoH: https://dns.quad9.net/dns-query',
+      adguard: 'IPv4: 94.140.14.14 | DoH: https://dns.adguard-dns.com/dns-query'
+    };
+    document.getElementById('dns-output').innerText = map[e.target.value];
+  });
+
+  async function handleFileHash(file) {
+    if (!file) return;
+    const resultBlock = document.getElementById('hash-result-block');
+    const hashOutput = document.getElementById('file-hash-output');
+    const dropzoneText = document.getElementById('dropzone-text');
+    resultBlock.style.display = 'flex';
+    dropzoneText.innerText = `Processing ${file.name} (${(file.size / 1024 / 1024).toFixed(1)} MB)...`;
+    hashOutput.innerText = 'Computing SHA-256...';
+
+    try {
+      const buffer = await file.arrayBuffer();
+      const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+      hashOutput.innerText = hashHex;
+      document.getElementById('computed-hash').value = hashHex;
+      compareHashes();
+      dropzoneText.innerText = `Done: ${file.name}`;
+    } catch {
+      hashOutput.innerText = 'Error computing hash.';
+      dropzoneText.innerText = 'Drop file here or click to compute SHA-256 hash';
+    }
+  }
+
+  function compareHashes() {
+    const official = document.getElementById('official-hash').value.trim().toLowerCase();
+    const computed = document.getElementById('computed-hash').value.trim().toLowerCase();
+    const status = document.getElementById('hash-match-status');
+
+    if (!official || !computed) {
+      status.innerText = 'Awaiting hashes...';
+      status.style.color = 'var(--text-dim)';
+      return;
+    }
+    if (official === computed) {
+      status.innerText = '✓ Checksum Match (Verified Safe)';
+      status.style.color = 'var(--safe)';
+    } else {
+      status.innerText = '✕ Checksum Mismatch (File Corrupt or Altered)';
+      status.style.color = 'var(--danger)';
+    }
+  }
+
+  function updateDockerCompose() {
+    const jellyfin = document.getElementById('srv-jellyfin').checked;
+    const immich = document.getElementById('srv-immich').checked;
+    const portainer = document.getElementById('srv-portainer').checked;
+    const qbittorrent = document.getElementById('srv-qbittorrent').checked;
+
+    let yaml = "version: '3.8'\nservices:\n";
+    if (jellyfin) {
+      yaml += "  jellyfin:\n    image: jellyfin/jellyfin:latest\n    container_name: jellyfin\n    ports:\n      - 8096:8096\n    restart: unless-stopped\n";
+    }
+    if (immich) {
+      yaml += "  immich:\n    image: ghcr.io/immich-app/immich-server:release\n    container_name: immich_server\n    ports:\n      - 2283:2283\n    restart: unless-stopped\n";
+    }
+    if (portainer) {
+      yaml += "  portainer:\n    image: portainer/portainer-ce:latest\n    container_name: portainer\n    ports:\n      - 9443:9443\n    restart: unless-stopped\n";
+    }
+    if (qbittorrent) {
+      yaml += "  qbittorrent:\n    image: lscr.io/linuxserver/qbittorrent:latest\n    container_name: qbittorrent\n    ports:\n      - 8080:8080\n      - 6881:6881\n      - 6881:6881/udp\n    restart: unless-stopped\n";
+    }
+    document.getElementById('docker-output').innerText = yaml;
+  }
+
   document.getElementById('search-input').addEventListener('input', (e) => {
-    currentSearch = e.target.value.toLowerCase();
+    currentSearch = e.target.value.trim().toLowerCase();
     renderAll();
   });
 
@@ -385,41 +717,79 @@ select.filter-btn{outline:none}
     renderAll();
   });
 
+  document.getElementById('reset-filters-btn').addEventListener('click', () => {
+    currentSearch = '';
+    activePlatform = null;
+    activeFavFilter = false;
+    document.getElementById('search-input').value = '';
+    document.getElementById('fav-filter-btn').classList.remove('active');
+    document.querySelectorAll('.filters .filter-btn[data-platform]').forEach(b => b.classList.remove('active'));
+    renderAll();
+  });
+
   document.getElementById('theme-toggle').addEventListener('click', () => {
     const current = document.documentElement.getAttribute('data-theme');
     const next = current === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('piracy_theme', next);
     document.getElementById('theme-toggle').innerText = next === 'dark' ? '🌙' : '☀️';
   });
 
+  const protectModal = document.getElementById('protect-modal');
+  function openProtectModal() { protectModal.classList.add('open'); }
+  function closeProtectModal() { protectModal.classList.remove('open'); }
+
+  document.getElementById('vpn-fix-btn').addEventListener('click', openProtectModal);
+  document.getElementById('protect-guide-btn').addEventListener('click', openProtectModal);
+  document.getElementById('close-protect-modal').addEventListener('click', closeProtectModal);
+  protectModal.addEventListener('click', (e) => {
+    if (e.target === protectModal) closeProtectModal();
+  });
+
   const searchOverlay = document.getElementById('search-overlay');
-  document.getElementById('search-toggle-overlay').addEventListener('click', () => {
+  const globalInput = document.getElementById('global-search-input');
+
+  function openGlobalSearch() {
     searchOverlay.classList.add('open');
-    document.getElementById('global-search-input').focus();
+    globalInput.value = '';
+    renderGlobalResults('');
+    globalInput.focus();
+  }
+
+  document.getElementById('search-toggle-overlay').addEventListener('click', openGlobalSearch);
+  searchOverlay.addEventListener('click', (e) => {
+    if (e.target === searchOverlay) searchOverlay.classList.remove('open');
   });
 
   document.addEventListener('keydown', e => {
-    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
       e.preventDefault();
-      document.getElementById('search-input').focus();
+      searchOverlay.classList.contains('open') ? searchOverlay.classList.remove('open') : openGlobalSearch();
     }
-    if (e.key === 'Escape') searchOverlay.classList.remove('open');
+    if (e.key === 'Escape') {
+      searchOverlay.classList.remove('open');
+      closeProtectModal();
+    }
   });
 
-  document.getElementById('global-search-input').addEventListener('input', function() {
-    const q = this.value.toLowerCase();
-    const results = toolsData.filter(t => t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q)).slice(0, 8);
+  function renderGlobalResults(q) {
+    const results = toolsData.filter(t => !q || t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q)).slice(0, 8);
     const container = document.getElementById('global-search-results');
     container.innerHTML = results.map(r => `
-      <div class="search-result-item" onclick="jumpToResource('${r.category}')">
-        <span>${r.icon} ${r.name}</span>
-        <span style="font-size:11px;color:var(--text-dim);">${r.category}</span>
+      <div class="search-result-item" onclick="jumpToResource('${r.category}', '${r.name.replace(/'/g, "\\'")}')">
+        <span>${r.icon} <strong>${r.name}</strong> <span style="color:var(--text-muted);font-size:12px;">— ${r.desc.slice(0, 48)}...</span></span>
+        <span class="tag">${r.category}</span>
       </div>
     `).join('');
+  }
+
+  globalInput.addEventListener('input', function() {
+    renderGlobalResults(this.value.trim().toLowerCase());
   });
 
   function jumpToResource(cat) {
     searchOverlay.classList.remove('open');
+    document.getElementById('reset-filters-btn').click();
     const elem = document.getElementById(`sec-${cat}`);
     if (elem) elem.scrollIntoView({ behavior: 'smooth' });
   }
@@ -428,33 +798,164 @@ select.filter-btn{outline:none}
   window.addEventListener('scroll', () => backTop.classList.toggle('visible', window.scrollY > 300));
   backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  (function initVpnCheck() {
+  function checkVpnStatus() {
     const banner = document.getElementById('vpn-banner');
     const label = document.getElementById('vpn-label');
     const detail = document.getElementById('vpn-detail');
-    document.getElementById('vpn-dismiss').addEventListener('click', () => banner.style.display = 'none');
+    const fixBtn = document.getElementById('vpn-fix-btn');
+    const ipStatus = document.getElementById('audit-ip-status');
+    const ipSub = document.getElementById('audit-ip-sub');
+    const ipFix = document.getElementById('audit-ip-fix');
 
-    fetch('https://ip-api.com/json/?fields=status,isp,query,proxy,hosting', { signal: AbortSignal.timeout(3000) })
+    banner.className = 'vpn-banner state-caution';
+    label.innerText = 'CHECKING';
+    detail.innerText = 'Verifying connection telemetry...';
+    fixBtn.style.display = 'none';
+
+    fetch('https://ipwho.is/', { signal: AbortSignal.timeout(4000) })
       .then(r => r.json())
       .then(data => {
-        const isVpn = data.proxy || data.hosting;
-        if (isVpn) {
+        if (!data.success) throw new Error('Lookup failed');
+        const isp = data.connection?.isp || data.connection?.org || 'Unknown ISP';
+        isTunnelProtected = /vpn|mullvad|proton|nord|surfshark|hosting|datacenter|digitalocean|hetzner|ovh|linode|aws|google|cloudflare|warp/i.test(isp);
+        if (isTunnelProtected) {
           banner.className = 'vpn-banner state-safe';
-          label.innerText = 'Protected';
-          detail.innerText = `VPN active (${data.isp})`;
+          label.innerText = 'PROTECTED';
+          detail.innerText = `Tunnel active · ${data.ip} (${isp}, ${data.country_code})`;
+          fixBtn.style.display = 'none';
+          ipStatus.className = 'audit-status ok';
+          ipStatus.innerText = '✓ Masked IP';
+          ipSub.innerText = `${data.ip} (${isp})`;
+          ipFix.style.display = 'none';
         } else {
           banner.className = 'vpn-banner state-exposed';
-          label.innerText = 'Exposed';
-          detail.innerText = `IP visible: ${data.query} (${data.isp})`;
+          label.innerText = 'EXPOSED';
+          detail.innerText = `Residential IP visible · ${data.ip} (${isp}, ${data.country_code})`;
+          fixBtn.style.display = 'inline-block';
+          ipStatus.className = 'audit-status bad';
+          ipStatus.innerText = '✕ Exposed IP';
+          ipSub.innerText = `${data.ip} (${isp})`;
+          ipFix.style.display = 'block';
         }
       })
       .catch(() => {
         banner.className = 'vpn-banner state-caution';
-        label.innerText = 'Unverified';
-        detail.innerText = 'Unable to verify VPN status.';
+        label.innerText = 'UNVERIFIED';
+        detail.innerText = 'IP telemetry blocked by browser or DNS filter.';
+        fixBtn.style.display = 'inline-block';
+        ipStatus.className = 'audit-status warn';
+        ipStatus.innerText = '! Blocked';
+        ipSub.innerText = 'Telemetry script blocked';
+        ipFix.style.display = 'block';
       });
-  })();
+  }
 
+  function checkWebRTC() {
+    const status = document.getElementById('audit-webrtc-status');
+    const sub = document.getElementById('audit-webrtc-sub');
+    const fix = document.getElementById('audit-webrtc-fix');
+    if (!window.RTCPeerConnection) {
+      status.className = 'audit-status ok';
+      status.innerText = '✓ Disabled';
+      sub.innerText = 'WebRTC API completely disabled';
+      fix.style.display = 'none';
+      return;
+    }
+    const foundIps = new Set();
+    const pc = new RTCPeerConnection({ iceServers: [{ urls: 'stun:stun.l.google.com:19302' }] });
+    pc.createDataChannel('');
+    pc.createOffer().then(o => pc.setLocalDescription(o)).catch(() => {});
+    pc.onicecandidate = (e) => {
+      if (!e.candidate) return;
+      const match = e.candidate.candidate.match(/([0-9]{1,3}(\.[0-9]{1,3}){3})/);
+      if (match && !match[1].startsWith('0.')) foundIps.add(match[1]);
+    };
+    setTimeout(() => {
+      pc.close();
+      const realIps = [...foundIps].filter(ip => {
+        const isLocal = /^(10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[0-1])\.)/.test(ip);
+        return !isLocal;
+      });
+
+      if (realIps.length === 0 || isTunnelProtected) {
+        status.className = 'audit-status ok';
+        status.innerText = '✓ Sealed';
+        sub.innerText = 'No unauthorized IP leaks via ICE';
+        fix.style.display = 'none';
+      } else {
+        status.className = 'audit-status bad';
+        status.innerText = '✕ Public Leak';
+        sub.innerText = `Leaking: ${realIps.join(', ')}`;
+        fix.style.display = 'block';
+      }
+    }, 1500);
+  }
+
+  function checkAdBlocker() {
+    const status = document.getElementById('audit-adblock-status');
+    const sub = document.getElementById('audit-adblock-sub');
+    const fix = document.getElementById('audit-adblock-fix');
+
+    if (window.location.protocol === 'file:') {
+      status.className = 'audit-status warn';
+      status.innerText = '! File URL';
+      sub.innerText = 'Enable file access in extension settings';
+      fix.style.display = 'block';
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+    script.onload = () => {
+      status.className = 'audit-status bad';
+      script.remove();
+      status.innerText = '✕ Unprotected';
+      sub.innerText = 'Ad script loaded successfully';
+      fix.style.display = 'block';
+    };
+    script.onerror = () => {
+      status.className = 'audit-status ok';
+      script.remove();
+      status.innerText = '✓ Active';
+      sub.innerText = 'uBlock Origin successfully blocked ad script';
+      fix.style.display = 'none';
+    };
+    document.head.appendChild(script);
+  }
+
+  function checkFingerprint() {
+    const status = document.getElementById('audit-fp-status');
+    const sub = document.getElementById('audit-fp-sub');
+    const fix = document.getElementById('audit-fp-fix');
+    const gpc = navigator.globalPrivacyControl;
+    const dnt = navigator.doNotTrack === '1';
+    const cores = navigator.hardwareConcurrency || '?';
+    if (gpc || dnt) {
+      status.className = 'audit-status ok';
+      status.innerText = gpc ? '✓ GPC Active' : '✓ DNT Active';
+      sub.innerText = `Privacy headers sent · ${cores} threads`;
+      fix.style.display = 'none';
+    } else {
+      status.className = 'audit-status warn';
+      status.innerText = '! Standard';
+      sub.innerText = `No GPC/DNT signal · ${cores} threads`;
+      fix.style.display = 'block';
+    }
+  }
+
+  function runFullAudit() {
+    checkVpnStatus();
+    setTimeout(checkWebRTC, 600);
+    checkAdBlocker();
+    checkFingerprint();
+  }
+
+  document.getElementById('vpn-dismiss').addEventListener('click', () => {
+    document.getElementById('vpn-banner').style.display = 'none';
+  });
+  document.getElementById('recheck-ip-btn').addEventListener('click', runFullAudit);
+
+  runFullAudit();
   saveFavs();
   renderAll();
 </script>
